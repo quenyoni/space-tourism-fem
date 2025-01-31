@@ -1,0 +1,6 @@
+.homeBg{
+    @apply bg-[url('/assets/home/bg-h-1.jpg')] md:bg-[url('/assets/home/bg-h-2.jpg')] xl:bg-[url('/assets/home/bg-h-3.jpg')] bg-cover bg-center;
+  
+
+  }
+  

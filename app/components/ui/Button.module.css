@@ -1,0 +1,26 @@
+.button{
+    @apply grid place-content-center p-[3rem]  rounded-[50%] text-2xl lg:text-4xl  font-bellefair bg-white w-[10rem] h-[10rem] lg:w-[12rem] lg:h-[12rem] text-dark;
+    position: relative;
+}
+
+.button::after{
+    position: absolute;
+    z-index: -1;
+    background: inherit;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    content:'';
+    height: 1rem;
+    width: 1rem;
+   transition: all 500ms ease-in;
+    border-radius: 50%;
+}
+
+.button:hover::after  {
+    background: hsl(0 0 100 / .5);
+    /* opacity:0.5; */
+    width:150%;
+    height: 150%;
+    
+}

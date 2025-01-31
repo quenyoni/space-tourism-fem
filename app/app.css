@@ -1,12 +1,333 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&display=swap'); */
+
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root{
+  --white:hsl(0, 0%, 100%);
+}
+
+@font-face {
+  font-family: 'bellefair';
+  src: url('/assets/Bellefair-Regular.ttf');
+}
+@font-face {
+  font-family: 'barlow';
+  src: url('/assets/BarlowCondensed-Regular.ttf');
+}
+
+
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
+  
+  font-family: 'barlow';
+
+  position: relative;
+  color:#fff;
+  overflow-x:hidden;
+  
+}
+
+img{
+  max-width: 100%;
+  display: block;
+}
+
+.primary__nav{
+
+
+    backdrop-filter:blur(2rem); 
+    transform:translateX(100%);
+    transition:all 250ms ease-in;
+z-index:9997;
+
+ @apply flex 
+ gap-8
+ md:gap-[3rem] 
+ flex-col
+  bg-navBackdrop
+   md:flex-row 
+   fixed 
+   top-0 lg:top-[1rem] right-0 p-[clamp(5rem,10vw,20vh)]  left-[min(30vh,30%)] lg:left-[35%] h-[100vh] md:h-auto
+
+   opacity-0 md:opacity-[1] md:py-[2rem] md:px-[clamp(3rem,5vw,10rem)] ;
+
+}
+@media (min-width:48em) {
+  .primary__nav{
+    transform: translateX(0) ;
   }
+  
+}
+
+
+.active{
+  
+  transform:translateX(0%);
+  opacity:1;
+  
+}
+
+.mobile__nav__toggle{
+ 
+    @apply md:hidden;
+    position:absolute;
+    width:1rem;padding:.75rem;
+    aspect-ratio:1;
+    background: no-repeat center/cover;
+    background: url('/assets/shared/icon-hamburger.svg') no-repeat center/cover;
+    
+    top:2rem;
+    right:2rem;
+    
+    z-index:9999;
+    
+    
+  }
+  
+  .mobile__nav__toggle.active{
+  background-image: url('/assets/shared/icon-close.svg') ;
+  
+}
+
+
+
+.main__nav{
+
+  background: rgba(255, 255, 255, 0.04);
+  filter:blur(85%);
+  padding: 2rem;
+  position: fixed;
+  right:0;
+  min-width: 50vh;
+}
+
+.home-bg{
+  @apply bg-[url('/assets/home/bg-h-1.jpg')] md:bg-[url('/assets/home/bg-h-2.jpg')] xl:bg-[url('/assets/home/bg-h-3.jpg')] bg-cover bg-center;
+  
+ position: absolute;
+ left:0;
+ top:0;
+ height:100vh;
+ width: 100%;
+  
+}
+
+p{
+  @apply text-pastelBlue font-barlow tracking-wide leading-relaxed ;
+
+}
+
+.header__link.active{
+  @apply border-b-[3px] border-white;
+}
+
+.header__link:hover{
+  border-bottom: 3px solid hsl(0 0% 100% / .5);
+  ;
+}
+
+.header__link:hover > .link__text{
+  opacity: 0.95;
+}
+
+.bellefair{
+  font-family: 'bellefair';
+}
+
+section{
+  @apply min-h-[100vh] lg:max-h-[100vh]; 
+  position: fixed; 
+  inset: 0 0 0 0;
+
+  width: 100vw;
+  z-index:9995;
+
+   /* left:0;
+bottom: 0;
+margin: 0; */
+   min-height: 100%; 
+   overflow-x: hidden;
+
+   /* background-attachment: fixed;  */
+opacity:1;
+   
+   /* animation: forwards showUp 1200ms ease-in;
+     */
+}
+
+.blurUp{
+ 
+  z-index:10000;
+  /* backdrop-filter:blur(1rem); */
+  
+}
+
+
+.hydration{
+  position: absolute;
+  left:0;
+  top:0;
+  opacity: 0.95;
+  background: linear-gradient(30deg,rgba(11, 13, 23,0.95),rgba(11, 13, 23,0.99)) no-repeat;
+  height: 100vh;
+  width: 100vw;
+  animation: changeOpacity forwards 250ms ease-in;
+  
+}
+
+@keyframes changeOpacity {
+  0%{
+    opacity: 0;
+  }
+  50%{
+   opacity: 1;
+  }
+  100%{
+   opacity: 1;
+  }
+  
+}
+
+
+
+.canvas{
+  @apply bg-pastelBlue;
+  width: 100vw;
+  height: 100vh;
+
+}
+
+.planet__image{
+ 
+z-index:200;
+  max-width: 80%;
+  height: auto;
+  transform: rotate(0deg);
+  animation: infinite rotatePlanet 180s ease-in-out;
+  
+}
+
+.planet__title{
+ 
+  transform: translateX(-75%);
+  animation: slideToRight 250ms ease-in-out  forwards ;
+
+}
+
+
+@keyframes slideToRight {
+  
+  0%{
+    transform: translateX(-75%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+  
+}
+@keyframes rotatePlanet {
+  
+  from{
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+  
+}
+
+h1{
+  line-height: 1.1;
+}
+
+.techlink{
+
+  @apply border  rounded-full w-[3.5rem] h-[3.5rem] aspect-auto text-white  grid place-content-center text-2xl font-bellefair  ;
+cursor: pointer;
+border: 1px solid hsl(0 0 100 /0.2);
+transition: border 250ms ease-in;
+}
+
+.techlink:hover{
+  border: 1px solid hsl(0 0 100 );
+
+  
+}
+
+.techlink.active{
+  @apply bg-white text-dark;
+  transition: background 250ms ease-in;
+ 
+  
+}
+
+.d__link{
+  @apply text-pastelBlue;
+  border-bottom: 2px solid transparent;
+  translate:all 250ms ease-in;
+  
+}
+
+.d__link:hover{
+border-bottom: 2px solid hsl(0 0 100 / 0.5);
+}
+
+.d__link.active{
+  @apply text-white;
+  border-bottom: 2px solid #fff;
+}
+
+.crew__member{
+  position:relative;
+
+}
+
+.crew__member::after{
+  @apply bg-pastelBlue md:hidden ;
+  position:absolute;
+  content:'';
+  height:1px;
+  bottom:0;
+  left:0;
+  width:100%;
+
+  
+}
+
+.crewButton{
+  position: relative;
+  opacity: 1;
+}
+
+.crewButton::before{
+  position: absolute;
+  content: '';
+opacity:1;
+left:50%;
+top:50%;
+transform: translate(-50%,-50%);
+border-radius: 50%;  
+height:1.5rem;
+width: 1.5rem;
+transition: all 250ms ease-in;
+  
+}
+.crewButton:hover::before{
+  background: white;
+  opacity: 0.5;
+}
+
+.crewButton::before{
+  background: white;
+  opacity: 0.17;
+}
+.crewButton.active::before{
+  background: white;
+  opacity: 1;
 }
