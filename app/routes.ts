@@ -19,12 +19,3 @@ export default [
   
   ] satisfies RouteConfig;
 
-
-
-    //  // Define the home route
-    //  layout("./layouts/contentLayout.tsx", [
-    //     index("routes/home.tsx"),
-    // //  index( "routes/destination.tsx"),
-    //  route("destination","routes/destination.tsx"), 
-    //     route("destination/:destinationId", "./routes/destinationId.tsx"), // Match specific destinations
-    //   ]),

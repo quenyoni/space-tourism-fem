@@ -122,8 +122,8 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 
 export function HydrateFallback() {
   return (
-    <div className="hydration " id="loading-splash">
-      <div id="loading-splash-spinner" />
+    <div className="hydration__loader " >
+      <div className="page__loader" />
       <p>Loading, please wait...</p>
     </div>
   );
