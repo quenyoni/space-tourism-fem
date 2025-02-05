@@ -23,12 +23,13 @@
 
 html,
 body {
-
+@apply bg-dark;
   
   font-family: 'barlow';
 
   position: relative;
   color:#fff;
+
   overflow-x:hidden;
   
 }
