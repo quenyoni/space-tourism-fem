@@ -59,7 +59,7 @@ Users should be able to:
 🟢 Mobile-first workflow  
 🟢 [React](https://react.dev/) - JS library  
 🟢 [React Router](https://reactrouter.com/) - React framework  
-🟢 [TailwindCSS](https://tailwindcss.com) - For Styling Components  gi
+🟢 [TailwindCSS](https://tailwindcss.com) - For Styling Components  
 
 
 ### What I learned
