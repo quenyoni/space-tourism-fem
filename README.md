@@ -122,5 +122,5 @@ To further develop the site ,I plan to add an extra page that has a map feature 
 
 
  🖥️ Frontend Mentor - [@quenyoni](https://www.frontendmentor.io/profile/quenyoni)  
-📩  Email :  [quenyoni@gmail.com](quenyoni@gmail.com)  
+📩  Email :  [quenyoni@gmail.com](mailto:quenyoni@gmail.com)  
 🐥  X - [@quenyoni](https://www.x.com/quenyoni)
